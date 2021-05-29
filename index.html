@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- 
+// Tinto, a tool for creating colour palettes
+// Author: John Lynch
+// Date: June 2019
+// File: tinto/index.html 
+ -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Xword</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="description" content="A Javascript app for making colour palettes!">
+    <meta name="author" content="John Lynch">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <main id="page-grid">
+<!-- =========================================================================================== -->
+<!-- =========================================================================================== -->
+
+        <header>
+            <div id="title">
+              <span>Xword</span>
+              <span id="about">About Xword</span>
+            </div> 
+        </header>  
+
+<!-- =========================================================================================== -->
+<!-- =========================================================================================== -->
+
+        <section id="colour-grid">
+            <!-- Javascript code puts a square array of 8x8 squares here -->
+        </section>
+
+<!-- =========================================================================================== -->
+<!-- =========================================================================================== -->
+        
+        <section id="controls">
+<!-- =========================================================================================== -->
+ 
+
+            
+            <div >
+            </div>            
+
+            <div class="wrapper">           
+            </div>
+
+<!-- =========================================================================================== -->
+<!-- =========================================================================================== -->
+
+            </section> <!-- END OF CONTROLS SECTION -->
+<!-- =========================================================================================== -->
+
+<div class="red-border"></div>
+
+    <section id="settings">
+      <section class="buttons">
+         <button class="btn" id="show-hex">CHECK</button>
+         <button class="btn" id="random-hsl">ANAGRAM</button>
+         <button class="btn" id="random-rgb">RANDOM</button>
+         <button class="btn" id="show-lum">CLUE</button>
+         <button class="btn" id="show-code">THINK</button>
+         <button class="btn" id="show-about">ABOUT XWORD</button>
+      </section>
+      <p id="status">
+         Welcome to Xword by <a href="https://www.teraspora.net" target="_blank" rel="noopener">Teraspora</a> 
+      </p>
+      <p>
+         Xword lets you do geeky crosswords and get a wacky sound played on success.
+      </p>
+      <p>
+        Select a square in the grid to start typing your answer.
+      </p>
+    </section>
+
+    </main>
+
+    <!-- Code store - default display: none or opacity: 0 -->
+    <div id="modal">
+      <div id="modal-drag-bar">Palette Code</div>
+      
+      <!--  dummy div, to be replaced -->
+      <div></div>
+
+    </div>
+    
+    <div id="div-store">
+      <div id="code-block">
+        <ul>
+          <li><pre><code class="code-list-item"></code></pre></li>
+          <li><pre><code class="code-list-item"></code></pre></li>
+          <li><pre><code class="code-list-item"></code></pre></li>
+          <li><pre><code class="code-list-item"></code></pre></li>
+          <li><pre><code class="code-list-item"></code></pre></li>
+          <li><pre><code class="code-list-item"></code></pre></li>
+        </ul>
+          <div><pre><code id="code-item"></code></pre></div>
+      </div>
+      <div id="contrast-info">
+        <div id="contrast-col0" class="col-box"></div>
+        <div id="contrast-col1" class="col-box"></div>
+        <div id="contrast-details"></div>
+      </div>
+    </div>
+
+    <div id="about-box">
+      <h1 id="tinto">Tinto</h1>
+      <h2 id="functionality-and-use">Functionality and Use</h2>
+      <p>Tinto is a tool for web developers and designers, or indeed anyone who has to work with digital colours.</p>
+      <p>It lets you</p>
+      <ul>
+      <li>Find precisely the colours you like</li>
+      <li>Show their hex values</li>
+      <li>Check their luminance</li>
+      <li>Add them to your palette</li>
+      <li>Check the contrast ratio of any two colours in your palette</li>
+      <li>Copy the code for your palette as CSS custom properties or an array of hex strings</li>
+      <li>Delete unneeded colours from your palette</li>
+      <li>Work with an RGB or an HSL colour model</li>
+      <li>Generate random RGB or random HSL colours</li>
+      <li>Vary or fix any of the colour components</li>
+      </ul>
+      <p>It should be fairly intuitive to use Tinto. Play with the buttons and sliders to vary the colours in the grid, and if you find a colour you like, click/tap it to add it to the palette.</p>
+      <p>Click the red X to remove a colour from the palette.   Newly chosen colours will fill any gaps.</p>
+      <p>Clicking &quot;Show Hex&quot; or &quot;Show Luminance&quot; will display these values in the grid and in the palette.   In the grid, only one of these will be shown; luminance takes precedence over hex.</p>
+      <p>Any components that are fixed will be shown, with their fixed values, in thge blue bar in the control panel.</p>
+      <p>More details about web standards for contrast ratio can be found at 
+        <a target="_blank" rel="noopener" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html</a>.</p>
+      <p>Tinto is deployed to 
+        <a target="_blank" rel="noopener" href="https://teraspora.github.io/tinto/">https://teraspora.github.io/tinto/</a>.</p>
+      <h2 id="notes">Notes</h2>
+      <p>Tinto has been developed by me, John Lynch, initially as a tool for myself, to help me find nice complementary colour schemes for websites.   As it grew in functionality I realised it could also be useful for other front-end developers and designers.</p>
+      <p>It should work fine on large screens and on most mobiles, though on iPhones of various sorts the display may be substandard.   I have yet to investigate this properly but am certainly open to pull requests.   Tinto lives at 
+        <a target="_blank" rel="noopener" href="https://github.com/teraspora/tinto">https://github.com/teraspora/tinto</a>.</p>
+      <p>More fun and interesting projects can be found on 
+        <a target="_blank" rel="noopener" href="https://github.com/teraspora/">My Github page</a>, and please visit my  
+        <a href="https://www.teraspora.net/">website</a>.</p>
+      <button id="hide-about">Cancel</button>
+    </div>
+    <!-- <script type="text/javascript" src="scripts/css_colours.js"></script>
+     --><script type="text/javascript" src="scripts/colour_formulae.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+</body>
+
+</html>
